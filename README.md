@@ -1,4 +1,4 @@
-# React-Native-Anim-Textinput
+# React-Native-Anim-input
 
 # [Important](#Important)
 Please note that react-native-reanimated are needed for the library to work, so make sure they are installed in your project.
@@ -20,7 +20,7 @@ Enhance your React Native app's user experience with the React Native Animated T
 Import library
 
 ```javascript
-import TextInputAnim from 'react-native-anim-textinput'
+import TextInputAnim from 'react-native-anim-input'
 ```
 ### Example
 Single
@@ -125,6 +125,8 @@ export default Login;
 | color                                   |                  string                 |
 | placeholderTextColor                    |                  string                 |
 | activeColor                             |                  string                 |
+| fontFamily                              |                  string                 |
+| fontWeight                              |                  string                 |
 
 # Install
 
