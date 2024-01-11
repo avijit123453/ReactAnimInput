@@ -56,8 +56,6 @@ yarn-error.log
 *.jsbundle
 
 # Ruby / CocoaPods
-ios/
-android/
 /ios/Pods/
 /vendor/bundle/
 
