@@ -1,6 +1,6 @@
 {
   "name": "react-native-anim-input",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
