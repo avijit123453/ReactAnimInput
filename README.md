@@ -1,79 +1,171 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React-Native-Anim-Textinput
 
-# Getting Started
+# [Important](#Important)
+Please note that react-native-reanimated are needed for the library to work, so make sure they are installed in your project.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+[react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/)
 
-## Step 1: Start the Metro Server
+Enhance your React Native app's user experience with the React Native Animated Text Input npm package. This powerful library seamlessly integrates animated text input components into your application, providing a sleek and dynamic way for users to interact with forms and input fields.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Result
+<p align="left">
+  <img width=200 title="Default" src="https://github.com/avijit123453/AnimTextInput/assets/99875314/07408f52-45ce-48bc-ac11-ab1a87c075d9">
+  <img width=200 title="Focus" src="https://github.com/avijit123453/AnimTextInput/assets/99875314/fd63684b-8e7d-4c95-933b-d46707f23c1b">
+  <img width=200 title="Add Any value" src="https://github.com/avijit123453/AnimTextInput/assets/99875314/11e5e718-0448-4329-8a9f-162e462eab34">
+</p>
 
-To start Metro, run the following command from the _root_ of your React Native project:
+![Demo](https://github.com/avijit123453/AnimTextInput/assets/99875314/04d20cfd-8f35-4e1a-b341-81a1a693562e)
+
+## Usage
+
+Import library
+
+```javascript
+import TextInputAnim from 'react-native-anim-textinput'
+```
+### Example
+Single
+```javascript
+<TextInputAnim
+  value={email}
+  onChangeText={email => setEmail(email)}
+  marginVertical={10}
+  placeholder={'Email'}
+  activeColor={'green'}
+  fontSize={15}
+  height={48}
+  width={'90%'}
+  color={'black'}
+/>;
+```
+Create login page
+```javascript
+import React, {useState} from 'react';
+import {SafeAreaView} from 'moti';
+import TextInputAnim from 'react-native-anim-textinput'
+import { Text } from 'react-native';
+
+const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  return (
+    <SafeAreaView
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        marginTop: 60
+      }}>
+
+        <Text style={{
+          marginVertical: 60
+        }}>Login</Text>
+
+      <TextInputAnim
+        value={email}
+        onChangeText={email => setEmail(email)}
+        marginVertical={10}
+        placeholder={'Email'}
+        activeColor={'green'}
+        fontSize={15}
+        height={48}
+        width={'90%'}
+        color={'black'}
+      />
+
+      <TextInputAnim
+        value={password}
+        onChangeText={email => setPassword(email)}
+        marginVertical={10}
+        placeholder={'Password'}
+      />
+
+      <TextInputAnim
+        value={confirmPassword}
+        onChangeText={email => setConfirmPassword(email)}
+        marginVertical={10}
+        placeholder={'Confirm Password'}
+      />
+    </SafeAreaView>
+  );
+};
+
+export default Login;
+```
+### Request Object
+
+| Property ( Required )                   |                   Type                  | 
+| --------------------------------------- | :-------------------------------------- |
+| value                                   |                 string                  |
+| onChangeText                            |                function                 |
+
+
+| Property ( default )                    |                   Type                  | 
+| --------------------------------------- | :-------------------------------------- |
+| height                                  |                  number                 |
+| width                                   |                  number                 |
+| onKeyPress                              |                 function                |
+| marginVertical                          |                  number                 |
+| keyboardType                            |                  string                 |
+| returnKeyType                           |                  string                 |
+| secureTextEntry                         |                   bool                  |
+| maxLength                               |                  number                 |
+| autoFocus                               |                 function                |
+| editable                                |                   bool                  |
+| onSubmitEditing                         |                 function                |
+| textAlign                               |                  string                 |
+| onFocus                                 |                 function                |
+| onBlur                                  |                 function                |
+| backgroundColor                         |                  string                 |
+| borderRadius                            |                  number                 |
+| borderWidth                             |                  number                 |
+| borderColor                             |                  string                 |
+| fontSize                                |                  number                 |
+| placeholder                             |                  string                 |
+| paddingHorizontal                       |                  number                 |
+| color                                   |                  string                 |
+| placeholderTextColor                    |                  string                 |
+| activeColor                             |                  string                 |
+
+# Install
+
+## Step 1
 
 ```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+npm i react-native-anim-textinput
 ```
 
-## Step 2: Start your Application
+## Step 2
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
+### iOS
 
 ```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+cd ios
+pod install
 ```
 
-### For iOS
+### Key Features:
 
-```bash
-# using npm
-npm run ios
+## Smooth Animations:
+Elevate the visual appeal of your app by incorporating smooth and elegant animations into your text input fields. Enjoy a seamless transition between states, creating a more engaging and polished user interface.
 
-# OR using Yarn
-yarn ios
-```
+## Customizable Styles: 
+Tailor the appearance of your text input components to match the unique aesthetic of your app. The package offers a wide range of customization options, including font styles, colors, and animation parameters, allowing you to achieve the perfect look and feel.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Responsive Design:
+Ensure a consistent and responsive design across various devices and screen sizes. The React Native Animated Text Input package is built with responsiveness in mind, delivering a consistent user experience regardless of the device being used.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## Intuitive API:
+Simplify the integration process with an intuitive and developer-friendly API. The package's well-documented API makes it easy for developers to implement animated text inputs seamlessly, reducing development time and effort.
 
-## Step 3: Modifying your App
+## Keyboard Interactivity:
+Enhance the user interaction with the keyboard through thoughtful animations and transitions. The package provides a set of features that enable you to create a fluid and responsive keyboard experience for users.
 
-Now that you have successfully run the app, let's modify it.
+## Accessibility:
+Prioritize accessibility with the React Native Animated Text Input package. The components are designed to maintain accessibility standards, ensuring that all users, including those with disabilities, can interact with your app effectively.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+## Cross-Platform Compatibility:
+Cross-Platform Compatibility: Develop applications for both iOS and Android platforms without compromising on performance or design. The React Native Animated Text Input package is built to seamlessly support both major mobile platforms.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
