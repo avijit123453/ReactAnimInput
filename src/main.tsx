@@ -36,6 +36,20 @@ interface InputType {
   color?: string;
   placeholderTextColor?: string;
   activeColor?: string;
+  fontWeight?:
+    | 'normal'
+    | 'bold'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | undefined;
+  fontFamily?: string;
 }
 
 const TextInputAnim: FC<InputType> = ({
@@ -66,6 +80,8 @@ const TextInputAnim: FC<InputType> = ({
   color = 'black',
   placeholderTextColor = 'grey',
   activeColor = 'green',
+  fontWeight,
+  fontFamily,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -191,6 +207,8 @@ const TextInputAnim: FC<InputType> = ({
           paddingHorizontal: paddingHorizontal,
           fontSize: fontSize,
           color: color,
+          fontWeight: fontWeight,
+          fontFamily: fontFamily,
         }}
         onKeyPress={onKeyPress}
         keyboardType={keyboardType}
