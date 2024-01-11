@@ -9,12 +9,11 @@ Enhance your React Native app's user experience with the React Native Animated T
 
 ## Result
 <p align="left">
-  <img width=200 title="Default" src="https://github.com/avijit123453/AnimTextInput/assets/99875314/07408f52-45ce-48bc-ac11-ab1a87c075d9">
-  <img width=200 title="Focus" src="https://github.com/avijit123453/AnimTextInput/assets/99875314/fd63684b-8e7d-4c95-933b-d46707f23c1b">
-  <img width=200 title="Add Any value" src="https://github.com/avijit123453/AnimTextInput/assets/99875314/11e5e718-0448-4329-8a9f-162e462eab34">
+  <img width=200 title="Default" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/f25df778-6382-4e7e-8cf2-9834d29f8158">
+  <img width=200 title="Focus" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/2fad6293-25cd-4c3e-a08b-0894e86349ea">
+  <img width=200 title="Add Any value" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/b4274ac2-48ef-4159-98d5-5edf3d76ec5f">
+  <img width=200 title="Video" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/a4461d98-5da1-424d-aceb-fa3755a0da95">
 </p>
-
-![Demo](https://github.com/avijit123453/AnimTextInput/assets/99875314/04d20cfd-8f35-4e1a-b341-81a1a693562e)
 
 ## Usage
 
@@ -41,9 +40,8 @@ Single
 Create login page
 ```javascript
 import React, {useState} from 'react';
-import {SafeAreaView} from 'moti';
-import TextInputAnim from 'react-native-anim-textinput'
-import { Text } from 'react-native';
+import TextInputAnim from 'react-native-anim-input'
+import { Text,SafeAreaView } from 'react-native';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -133,7 +131,7 @@ export default Login;
 ## Step 1
 
 ```bash
-npm i react-native-anim-textinput
+npm i react-native-anim-input
 ```
 
 ## Step 2
