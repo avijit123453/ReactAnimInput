@@ -1,7 +1,6 @@
 {
-  "name": "ReactNativeAnimTextInput",
-  "version": "0.0.1",
-  "private": true,
+  "name": "react-native-anim-input",
+  "version": "1.0.0",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -33,5 +32,20 @@
   },
   "engines": {
     "node": ">=18"
-  }
+  },
+  "description": "# [Important](#Important) Please note that react-native-reanimated are needed for the library to work, so make sure they are installed in your project.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avijit123453/ReactAnimInput.git"
+  },
+  "keywords": [
+    "ReactNativeAnimationTextInput"
+  ],
+  "author": "Avijit Bhowmik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avijit123453/ReactAnimInput/issues"
+  },
+  "homepage": "https://github.com/avijit123453/ReactAnimInput#readme"
 }
