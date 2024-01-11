@@ -39,12 +39,6 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
-__tests__
-.bundle
-.vscode
-android
-ios
-vendor
 
 # fastlane
 #
@@ -62,6 +56,8 @@ vendor
 *.jsbundle
 
 # Ruby / CocoaPods
+/ios
+/android
 /ios/Pods/
 /vendor/bundle/
 
