@@ -11,6 +11,7 @@ Enhance your React Native app's user experience with the React Native Animated T
 <p align="left">
  <img width=200 title="Focus" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/2fad6293-25cd-4c3e-a08b-0894e86349ea">
   <img width=200 title="Add Any value" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/b4274ac2-48ef-4159-98d5-5edf3d76ec5f">
+ <img width=200 title="Add Any value" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/ade5e5c3-f1fe-4d32-b4a9-e8ecad9c47f0">
 </p>
 
 ## Usage
