@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import Login from './src/Example'
+import StackNavigator from './src/navigation/StackNavigator'
 
 const App = () => {
   return (
-    <Login/>
+    <StackNavigator/>
   )
 }
 
