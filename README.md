@@ -9,10 +9,9 @@ Enhance your React Native app's user experience with the React Native Animated T
 
 ## Result
 <p align="left">
-  <img width=200 title="Default" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/f25df778-6382-4e7e-8cf2-9834d29f8158">
-  <img width=200 title="Focus" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/2fad6293-25cd-4c3e-a08b-0894e86349ea">
+ <img width=200 title="Focus" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/2fad6293-25cd-4c3e-a08b-0894e86349ea">
   <img width=200 title="Add Any value" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/b4274ac2-48ef-4159-98d5-5edf3d76ec5f">
-  <img width=200 title="Video" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/a4461d98-5da1-424d-aceb-fa3755a0da95">
+ <img width=200 title="Add Any value" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/ade5e5c3-f1fe-4d32-b4a9-e8ecad9c47f0">
 </p>
 
 ## Usage
@@ -22,75 +21,295 @@ Import library
 ```javascript
 import TextInputAnim from 'react-native-anim-input'
 ```
-### Example
+## Basic
+<p align="left">
+ <img width=200 title="Video" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/a4461d98-5da1-424d-aceb-fa3755a0da95">
+</p>
+
 Single
 ```javascript
 <TextInputAnim
-  value={email}
-  onChangeText={email => setEmail(email)}
-  marginVertical={10}
-  placeholder={'Email'}
-  activeColor={'green'}
-  fontSize={15}
-  height={48}
-  width={'90%'}
-  color={'black'}
-/>;
+  onChangeText={txt => {
+    setName(txt);
+  }}
+  value={name}
+  placeholder="Name"
+  backgroundColor="white"
+  marginTop={30}
+/>
 ```
-Create login page
+## Example
 ```javascript
+import {
+  View,
+  TouchableWithoutFeedback,
+  KeyboardAvoidingView,
+  Keyboard,
+} from 'react-native';
 import React, {useState} from 'react';
-import TextInputAnim from 'react-native-anim-input'
-import { Text,SafeAreaView } from 'react-native';
+import TextInputAnim from 'react-native-anim-input';
+
+const Example = () => {
+  const [name, setName] = useState('');
+
+  return (
+    <View
+      style={{
+        flex: 1,
+      }}>
+      <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+        <KeyboardAvoidingView
+          style={{
+            flex: 1,
+            alignItems: 'center',
+            backgroundColor: 'white',
+          }}>
+          <TextInputAnim
+            onChangeText={txt => {
+              setName(txt);
+            }}
+            value={name}
+            placeholder="Name"
+            backgroundColor="white"
+            marginTop={30}
+          />
+        </KeyboardAvoidingView>
+      </TouchableWithoutFeedback>
+    </View>
+  );
+};
+
+export default Example;
+```
+### Auto Check Valid Email
+
+| Property                                |                   Type                  |                 description                  |   
+| --------------------------------------- | :-------------------------------------- | :------------------------------------------- |
+| inputType*                              |            string                       |                email,Password                |
+| emailAutoChecked*                       |            boolen                       |                     true                     |
+| icons ( optional )                                  |                  Array                  | [{uri: 'https://cdn-icons-png.flaticon.com/128/4436/4436481.png'},{uri: 'https://cdn-icons-png.flaticon.com/128/9068/9068699.png'}] or [require('./image/clear.png'),require('./image/check.png')]|
+
+<p align="left">
+ <img width=200 title="Video" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/f1a4cd6c-e1b8-4acc-8b80-64978001d843">
+ <img width=200 title="Video" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/8f15621e-0fa1-4bd9-9c9a-6883b386050b">
+</p>
+
+## Usage
+```javascript
+  <TextInputAnim
+    backgroundColor="white"
+    onChangeText={txt => {
+      setEmail(txt);
+    }}
+    value={email}
+    placeholder="Email"
+    inputType={'email'}
+    emailAutoChecked={true}
+    // icons={[
+    //   {uri: 'https://cdn-icons-png.flaticon.com/128/4436/4436481.png'},
+    //   {uri: 'https://cdn-icons-png.flaticon.com/128/9068/9068699.png'}
+    // ]}
+  />
+```
+
+### Secure Password
+| Property                                |                   Type                  |                 description                  |   
+| --------------------------------------- | :-------------------------------------- | :------------------------------------------- |
+| inputType*                              |                  string                 |                email,Password                |
+| visibleIcons                            |                  boolen                 |                     true                     |
+| icons ( optional )                      |                  Array                  | [{uri: 'https://cdn-icons-png.flaticon.com/128/565/565654.png'},{uri: '[https://cdn-icons-png.flaticon.com/128/9068/9068699.png](https://cdn-icons-png.flaticon.com/128/4202/4202406.png)'}] or [require('./image/show.png'),require('./image/hide.png')]|
+
+<p align="left">
+ <img width=200 title="Video" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/cf243179-bbb6-4ba3-90a2-254dd0929681">
+ <img width=200 title="Video" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/e652185e-2b05-4929-baf0-50d1e933a8e6">
+</p>
+
+## Usage
+```javascript
+  <TextInputAnim
+    backgroundColor="white"
+    onChangeText={txt => {
+      setPassword(txt);
+    }}
+    value={password}
+    placeholder="Password"
+    inputType={'password'}
+    visibleIcons={true}
+    // icons={[
+    //   {uri: 'https://cdn-icons-png.flaticon.com/128/565/565654.png'},
+    //   {uri: 'https://cdn-icons-png.flaticon.com/128/4202/4202406.png'}
+    // ]}
+  />
+```
+### Add Error Meessage
+| Property                                |                   Type                  |                 description                  |   
+| --------------------------------------- | :-------------------------------------- | :------------------------------------------- |
+| showErrorMessage*                       |                  boolen                 |                     true                     |
+| errorMessage*                           |                  string                 |             add your error message           |
+| clearMessage*                           |                 function                |            clear your error message          |
+| onBlur ( optional )                     |                 function                |       add your validation functionality      |
+
+<p align="left">
+ <img width=200 title="Video" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/12de3970-1dfd-40df-a748-76eeb51be4f0">
+ <img width=200 title="Video" src="https://github.com/avijit123453/ReactAnimInput/assets/99875314/769007e1-2d1f-471f-9439-ddc6f00b7f99">
+</p>
+
+## Example
+```javascript
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from 'react-native';
+import React, {useRef, useState} from 'react';
+import TextInputAnim from 'react-native-anim-input';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  const passwordRef = useRef(null);
+  const confirmPassRef = useRef(null);
+  const [emailError, setEmailError] = useState('');
+  const [passError, setPassError] = useState('');
+  const [cpassError, setCPassError] = useState('');
+
+  const validateEmail = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setEmailError('Invalid email address');
+    } else if (email.toLowerCase() == 'avijit@gmail.com') {
+      setEmailError('Email Already Exists!');
+    } else {
+      setEmailError('');
+    }
+  };
+
+  const validatePassword = () => {
+    if (password.length < 8) {
+      setPassError('Password must be at least 8 characters');
+    } else {
+      setPassError('');
+    }
+  };
+
+  const validateConfirmPassword = () => {
+    if (password.length < 8) {
+      setCPassError('Password must be at least 8 characters');
+    } else if (password !== confirmPassword) {
+      setCPassError('The password and confirmation password do not match.');
+    } else {
+      setCPassError('');
+    }
+  };
+
+  function validation() {
+    console.log('validation');
+    Keyboard.dismiss();
+  }
+
   return (
-    <SafeAreaView
+    <View
       style={{
         flex: 1,
-        alignItems: 'center',
-        marginTop: 60
+        backgroundColor: 'white',
       }}>
+      <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+        <KeyboardAvoidingView
+          style={{
+            paddingVertical: 30,
+            alignItems: 'center',
+          }}>
+          <TextInputAnim
+            backgroundColor="white"
+            onChangeText={txt => {
+              setEmail(txt);
+            }}
+            value={email}
+            placeholder="Email"
+            returnKeyType="next"
+            keyboardType="email-address"
+            onSubmitEditing={() => {
+              if (passwordRef.current) {
+                passwordRef.current.focus();
+              }
+            }}
+            // email auto checking
+            inputType={'email'}
+            emailAutoChecked={true}
+            // show error message
+            showErrorMessage={true}
+            errorMessage={emailError}
+            clearMessage={() => setEmailError('')}
+            onBlur={() => validateEmail()}
+          />
 
-        <Text style={{
-          marginVertical: 60
-        }}>Login</Text>
+          <TextInputAnim
+            backgroundColor="white"
+            onChangeText={setPassword}
+            value={password}
+            placeholder="Password"
+            ref={passwordRef}
+            returnKeyType="next"
+            onSubmitEditing={() => {
+              if (confirmPassRef.current) {
+                confirmPassRef.current.focus();
+              }
+            }}
+            // hide password
+            inputType={'password'}
+            visibleIcons={true}
+            // show error message
+            showErrorMessage={true}
+            errorMessage={passError}
+            clearMessage={() => setPassError('')}
+            onBlur={() => validatePassword()}
+          />
 
-      <TextInputAnim
-        value={email}
-        onChangeText={email => setEmail(email)}
-        marginVertical={10}
-        placeholder={'Email'}
-        activeColor={'green'}
-        fontSize={15}
-        height={48}
-        width={'90%'}
-        color={'black'}
-      />
+          <TextInputAnim
+            backgroundColor="white"
+            onChangeText={setConfirmPassword}
+            value={confirmPassword}
+            placeholder="Confirm Password"
+            ref={confirmPassRef}
+            // hide password
+            inputType={'password'}
+            visibleIcons={true}
+            // show error message
+            showErrorMessage={true}
+            errorMessage={cpassError}
+            clearMessage={() => setCPassError('')}
+            onSubmitEditing={() => validation()}
+            onBlur={() => validateConfirmPassword()}
+          />
 
-      <TextInputAnim
-        value={password}
-        onChangeText={email => setPassword(email)}
-        marginVertical={10}
-        placeholder={'Password'}
-      />
-
-      <TextInputAnim
-        value={confirmPassword}
-        onChangeText={email => setConfirmPassword(email)}
-        marginVertical={10}
-        placeholder={'Confirm Password'}
-      />
-    </SafeAreaView>
+          <TouchableOpacity
+            onPress={() => validation()}
+            style={{
+              borderRadius: 8,
+              height: 45,
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderWidth: 1,
+              borderColor: 'grey',
+              width: '90%',
+              marginVertical: 30,
+            }}>
+            <Text style={{}}>Login</Text>
+          </TouchableOpacity>
+        </KeyboardAvoidingView>
+      </TouchableWithoutFeedback>
+    </View>
   );
 };
 
 export default Login;
 ```
+
 ### Request Object
 
 | Property ( Required )                   |                   Type                  | 
@@ -107,10 +326,10 @@ export default Login;
 | marginVertical                          |                  number                 |
 | keyboardType                            |                  string                 |
 | returnKeyType                           |                  string                 |
-| secureTextEntry                         |                   bool                  |
+| secureTextEntry                         |                  boolen                 |
 | maxLength                               |                  number                 |
 | autoFocus                               |                 function                |
-| editable                                |                   bool                  |
+| editable                                |                  boolen                 |
 | onSubmitEditing                         |                 function                |
 | textAlign                               |                  string                 |
 | onFocus                                 |                 function                |
@@ -127,7 +346,19 @@ export default Login;
 | activeColor                             |                  string                 |
 | fontFamily                              |                  string                 |
 | fontWeight                              |                  string                 |
-
+| inputType                               |                  string                 |
+| emailAutoChecked                        |                  boolen                 |
+| icons                                   |                   array                 |
+| visibleIcons                            |                  boolen                 |
+| showErrorMessage                        |                  boolen                 |
+| errorMessage                            |                  string                 |
+| clearMessage                            |                 function                |
+| margin                                  |                  number                 |
+| marginTop                               |                  number                 |
+| marginBottom                            |                  number                 |
+| marginLeft                              |                  number                 |
+| marginRight                             |                  number                 |
+  
 # Install
 
 ## Step 1
